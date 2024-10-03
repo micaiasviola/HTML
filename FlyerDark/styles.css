@@ -1,38 +1,86 @@
 /* Resetando margens e preenchimentos padrão */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
     box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    display: flex;
 }
 
 /* Corpo e fundo do flyer */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
     background-color: #1a1a1a;
     color: #fff;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+}
+
+.nav-class {
+    width: 100%;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.nav-class a {
+    position: relative;
+    padding-bottom: 0.75rem;
+    font-size: 2rem;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.nav-logo {
+    max-width: 100px;
+}
+
+.ul-class {
     display: flex;
     justify-content: center;
+    /* Ajustado para centralizar os itens */
+    list-style: none;
+    gap: 3rem;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+}
+
+section {
+    padding: 1rem;
 }
 
 /* Container principal do flyer */
 .flyer-container {
     background-color: #222;
-    width: 100%;
-    max-width: 900px;
+    display: contents;
+    justify-content: center;
     padding: 20px;
+    margin: 7%;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Cabeçalho com redes sociais */
-header {
-    margin-bottom: 20px;
-}
-
 .social-icons {
     display: flex;
     justify-content: center;
@@ -59,8 +107,8 @@ header {
     background-color: #1877f2;
 }
 
-.social-icon.twitter:hover {
-    background-color: #1da1f2;
+.social-icon.whatsapp:hover {
+    background-color: #1ca74a;
 }
 
 /* Estilo para o título e slogan */
@@ -80,28 +128,90 @@ header {
 /* Galeria de tatuagens */
 .tattoo-gallery {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
 }
 
 .tattoo-image img {
     width: 100%;
-    height: auto;
+    max-height: 300px;
     max-width: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 600px) {
+    .nav-class {
+        display: grid;
+        /* Alterado para grid em telas menores */
+        grid-template-columns: repeat(1, 1fr);
+        /* Uma coluna */
+        align-items: center;
+        /* Alinha os itens ao centro */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    .btn {
+        display: none;
+        /* Esconde botões em telas menores */
+    }
+
+    .tattoo-image {
+        transform: scale(0.8);
+        /* Reduz a escala das imagens */
+    }
+
+    /* Ajuste de espaçamentos em telas menores */
+    body {
+        padding: 0 1rem;
+         /* Adiciona um padding nas laterais */
+    }
+
+    nav {
+        flex-direction: column;
+        /* Muda a direção do nav para coluna */
+        align-items: center;
+        /* Alinha os itens ao centro */
+    }
+
+    .nav-class a {
+        padding: 10px;
+        /* Ajusta o padding dos links para toque fácil */
+        font-size: 16px;
+        /* Aumenta a legibilidade */
+    }
+
+    .tattoo-gallery {
+        flex-direction: column;
+        /* Coloca a galeria em coluna em telas pequenas */
+        align-items: center;
+        /* Centraliza as imagens */
+    }
+
+    .tattoo-image img {
+        max-width: 90%;
+        /* Limita a largura máxima das imagens */
+        height: auto;
+        /* Mantém a proporção */
+    }
+}
 
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .tattoo-gallery {
         flex-direction: column;
+        /* Muda para coluna em telas menores */
         gap: 20px;
     }
 
     .tattoo-image img {
         max-width: 100%;
+        /* Aumenta a flexibilidade das imagens */
     }
 }
