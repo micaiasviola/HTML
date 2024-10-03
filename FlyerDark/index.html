@@ -10,17 +10,20 @@
 </head>
 
 <body>
-    <nav class="nav-class">
+    <nav>
         <div class="nav-logo">
-            <img src="./img/logo.webp" alt="logo">
-        </div>
-        <div class="social-icons">
-            <a href="#" class="social-icon instagram"><i class="ri-instagram-line"></i>Instagram</a>
-            <a href="#" class="social-icon facebook"><i class="ri-facebook-circle-line"></i></i>Facebook</a>
-            <a href="#" class="social-icon whatsapp"><i class="ri-whatsapp-line"></i>Whatsapp</a>
-        </div>
+            <a href=""><img src="./img/template.png" alt=""></a>
 
-        <button class="btn" type="button">Ok</button>
+        </div>
+        <ul class="nav-links">
+            <li id="link" class="link"><a href="#">Home</a></li>
+            <li id="link1" class="link"><a href="#">Produtos</a></li>
+            <li id="link2" class="link"><a href="#">Valuation</a></li>
+            <li id="link3" class="link"><a href="#">Sobre</a></li>
+        </ul>
+
+        <button onclick="document.getElementById('socials').scrollIntoView({ behavior: 'smooth' });"
+            class="btn">Socials</button>
     </nav>
     <!-- Container principal do flyer -->
     <div class="flyer-container">
